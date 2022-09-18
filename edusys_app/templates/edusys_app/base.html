@@ -35,5 +35,25 @@
     </div>
   </div>
 </nav>
+
+{% if user.is_authenticated %}
+
+Logged as {{ user.username }}
+
+<form action="{% url 'logoutuser' %}" method="POST">
+      {% csrf_token %}
+  <button type="submit">Выйти</button>
+  </form>
+
+{% else %}
+
+<a href="{% url 'signupuser' %}">Зарегистрироваться</a>
+<a href="{% url 'loginuser' %}">Войти</a>
+
+{% endif %}
+
+
 </body>
 </html>
+
+{% block content %}{% endblock %}
