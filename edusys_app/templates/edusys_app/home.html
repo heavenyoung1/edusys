@@ -4,4 +4,38 @@
 {% block content %}
 HELLO, THIS HOME PAGE
 
-{% endblock %}
+<!-- Canvas -->
+<canvas class="orb-canvas"></canvas>
+<!-- Overlay -->
+<div class="overlay">
+  <!-- Overlay inner wrapper -->
+  <div class="overlay__inner">
+    <!-- Title -->
+    <h1 class="overlay__title">
+      Добро пожаловать в
+      <span class="text-gradient">Электронную Образовательую Среду</span> твоего университета
+    </h1>
+    <!-- Description -->
+    <p class="overlay__description">
+Здесь вы сможете взаимодействовать с преподавателями с другими студентами курса, обмениваться знаниями и успешно выполнять поставленные задачи
+      <strong>Будь вместе с нами!</strong>
+    </p>
+    <!-- Buttons -->
+    <div class="overlay__btns">
+
+      <button class="overlay__btn overlay__btn--transparent">
+        <a href="https://georgefrancis.dev/writing/create-a-generative-landing-page-and-webgl-powered-background/" target="_blank">
+
+         Регистрация
+        </a>
+      </button>
+
+      <button class="overlay__btn overlay__btn--colors">
+        <span>Войти</span>
+        <span class="overlay__btn-emoji"></span>
+      </button>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

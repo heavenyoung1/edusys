@@ -3,6 +3,29 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from .models import *
 
+class CourseForm(forms.ModelForm):
+    class Meta:
+        models = CourseModel
+        fields = '__all__'
+
+# class CourseForm(forms.Form):
+#     id = forms.IntegerField()
+#     course_name = forms.CharField(max_length=200)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 class RegistrationForm(UserCreationForm):
     """Кастомная форма регистрации новых пользователей"""
     email = forms.EmailField(required=False)

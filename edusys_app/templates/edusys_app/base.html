@@ -1,21 +1,40 @@
 
 
 
-{% if user.is_authenticated %}
+<!--{% if user.is_authenticated %}-->
 
-Logged as {{ user.username }}
+<!--Logged as {{ user.username }}-->
 
-<form action="{% url 'logoutuser' %}" method="POST">
-      {% csrf_token %}
-  <button type="submit">Выйти</button>
-  </form>
+<!--<form action="{% url 'logoutuser' %}" method="POST">-->
+<!--      {% csrf_token %}-->
+<!--  <button type="submit">Выйти</button>-->
+<!--  </form>-->
 
-{% else %}
+<!--{% else %}-->
 
-<a href="{% url 'signupuser' %}">Зарегистрироваться</a>
-<a href="{% url 'loginuser' %}">Войти</a>
+<!--<a href="{% url 'signupuser' %}">Зарегистрироваться</a>-->
+<!--<a href="{% url 'loginuser' %}">Войти</a>-->
 
-{% endif %}
+<!--{% endif %}-->
 
 
-{% block content %}{% endblock %}
+<!--{% block content %}{% endblock %}-->
+
+<!doctype html>
+
+{% load static %}
+
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <script type="text/javascript" href="{% static 'js/script.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <title>{% block title %}E-Learn{% endblock title %}</title>
+
+  </head>
+</html>

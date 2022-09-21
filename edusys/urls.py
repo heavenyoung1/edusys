@@ -23,4 +23,7 @@ urlpatterns = [
     path('signupuser', views.signupuser, name='signupuser'),
     path('logoutuser', views.logoutuser, name='logoutuser'),
     path('loginuser', views.loginuser, name='loginuser'),
+    path('main', views.main, name='main'),
+    path('student_form', views.student_form, name='student_form'),
+    path('add_course', views.add_course, name='add_course'),
 ]

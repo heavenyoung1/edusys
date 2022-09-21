@@ -3,13 +3,32 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 from django.contrib.auth import login, logout, authenticate
-from edusys_app.forms import RegistrationForm
+from edusys_app.forms import RegistrationForm, CourseForm
+
 
 # Create your views here.
 
 def home(request):
     """Вызов домашней страницы"""
     return render(request, 'edusys_app/home.html')
+
+def main(request):
+    """eee"""
+    return render(request, 'edusys_app/main.html')
+
+def student_form(request):
+    return render(request, 'edusys_app/student_form.html')
+
+def add_course(request):
+    if request.method == 'POST':
+        form = CourseForm(request.POST)
+        if form.is_valid():
+            course_save = form.save()
+            return redirect(course_save)
+    else:
+        form = CourseForm()
+        return render(request, 'edusys_app/student_form.html', {'form': form})
+
 
 def signupuser(request):
     """Регистрация пользователей"""
@@ -57,4 +76,4 @@ def loginuser(request):
             return render(request, 'edusys_app/loginuser.html', {'form': AuthenticationForm(), 'error':'Имя и пароль не совпадают'})
         else:
             login(request, user)
-            return redirect('home')
+            return redirect('main')
